@@ -1,32 +1,54 @@
-    
+body {
+  color: white;
+  font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+  background: black;
+}
     table {
       border-collapse: collapse;
-      width: 50%;
       margin: 20px auto;
     }
 
     th,
     td {
-      border: 1px solid #0fa1e4;
-      padding: 8px;
+      color: white;
+      padding: 5px;
       text-align: center;
     }
 
     th {
-      background-color: hsl(165, 95%, 49%);
+      color: white;
     }
 
-
+h1 {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+    margin: 20px auto;
+}
     h3 {
+      color: white;
+      text-align: center;
       width: 50%;
       margin: 20px auto;
     }
 
+        p {
+          color: white;
+          width: 50%;
+        }
     button {
-      padding: 8px 14px;
-      border: 1px solid rgba(243, 219, 1, 0.921)
-    }
 
+      font-family: 'Fredoka One', cursive;
+        font-weight: bold;
+      padding: 8px 14px;
+      background: gold ;
+      border: 2px solid goldenrod;
+    }
+h4 {
+  color: white;
+    width: 50%;
+}
 
 
 

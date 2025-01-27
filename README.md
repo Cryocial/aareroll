@@ -1,7 +1,5 @@
 # aareroll
 
 todos:
-add pictures next to the trait
+fix history
 tracker to see your previous roles
-multi roll
-
