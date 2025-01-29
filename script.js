@@ -101,14 +101,16 @@ function updateTable() {
     const row = document.createElement("tr");
 
     // Add image to the row
-    const imageCell = document.createElement("td");
-    const img = document.createElement("img");
-    img.src = item.image;
-    img.alt = item.name;
-    img.width = 50;
-    img.height = 50;
-    imageCell.appendChild(img);
 
+    const imageCell = document.createElement("td");
+    if (item.image) {
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.name;
+      img.width = 50;
+      img.height = 50;
+      imageCell.appendChild(img);
+    }
     // Determine styling class
     const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
     const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
