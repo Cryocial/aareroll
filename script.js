@@ -8,10 +8,10 @@ const pool = [
   { id: "sniper", name: "Sniper", rarity: "2.5%", probability: 2.5, count: 0, image: "pictures/trait_sniper.png" },
   { id: "culling", name: "Culling", rarity: "5%", probability: 5, count: 0, image: "pictures/trait_culling.png" },
   { id: "adept", name: "Adept", rarity: "9.99%", probability: 9.99, count: 0, image: "pictures/trait_adept.png" },
-  { id: "nimble", name: "Nimble III", rarity: "2.5%", probability: 3.75, count: 0, image: "pictures/trait_nimble_III.png" },
-  { id: "range", name: "Range III", rarity: "2.5%", probability: 3.75, count: 0, image: "pictures/trait_range_III.png" },
-  { id: "superior", name: "Superior III", rarity: "2.5%", probability: 4.5, count: 0, image: "pictures/trait_superior_III.png" },
-  { id: "everythingElse", name: "Everything Else", rarity: "94.89%", probability: 67.9, count: 0, image: "pictures/trait_everything_else.png" },
+  { id: "nimble", name: "Nimble III", rarity: "2.5%", probability: 3.75, count: 0, image: "pictures/trait_nimble.png" },
+  { id: "range", name: "Range III", rarity: "2.5%", probability: 3.75, count: 0, image: "pictures/trait_range.png" },
+  { id: "superior", name: "Superior III", rarity: "2.5%", probability: 4.5, count: 0, image: "pictures/trait_superior.png" },
+  { id: "everythingElse", name: "Everything Else", rarity: "94.89%", probability: 67.9, count: 0, image: "" },
 ];
 
 // Function to simulate a roll
@@ -127,6 +127,26 @@ function updateTable() {
     tableBody.appendChild(row);
   });
 }
+
+pool.forEach(item => {
+  const row = document.createElement("tr");
+  const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
+  const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
+  const isEpicItem = ["Superior III", "Nimble III", "Range III"].includes(item.name);
+  const isPlainItem = ["Everything Else"].includes(item.name);
+
+  let classNames = [];
+  if (isRainbowItem) classNames.push("rainbow-text");
+  if (isGoldenItem) classNames.push("golden-text");
+  if (isEpicItem) classNames.push("epic-text");
+  if (isPlainItem) classNames.push("plain-text");
+
+  row.innerHTML = `
+      <td class="${classNames.join(' ')}">${item.name}</td>
+      <td>${item.count}</td>
+    `;
+  tableBody.appendChild(row);
+});
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
