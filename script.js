@@ -44,9 +44,9 @@ function updateCurrentRoll(result) {
   document.getElementById('current-roll-text').textContent = result;
 
   // Update roll history if it's a 10x or higher roll
-    rollHistory.unshift(result); // Add to the beginning of the history array
-    updateRollHistory();
-  }
+  rollHistory.unshift(result); // Add to the beginning of the history array
+  updateRollHistory();
+}
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -79,15 +79,15 @@ function rollItems(times) {
       const random = Math.random() * 100; // Generate a number between 0 and 100
       let cumulative = 0;
 
-    for (const item of pool) {
-      cumulative += item.probability;
-      if (random < cumulative) {
-        item.count++;
-        break;
+      for (const item of pool) {
+        cumulative += item.probability;
+        if (random < cumulative) {
+          item.count++;
+          break;
+        }
       }
     }
   }
-    }
 
   // Update the table after all rolls
   updateTable();

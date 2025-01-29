@@ -1,98 +1,103 @@
 body {
   color: white;
   font-family: 'Fredoka One', cursive;
-    font-weight: bold;
+  font-weight: bold;
   background: black;
 }
-    table {
-      border-collapse: collapse;
-      margin: 20px auto;
-    }
 
-    th,
-    td {
-      color: white;
-      padding: 5px;
-      text-align: center;
-    }
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
 
-    th {
-      color: white;
-    }
+th,
+td {
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  color: white;
+}
 
 h1 {
   font-size: 50px;
   color: white;
   text-align: center;
-    margin: 20px auto;
+  margin: 20px auto;
 }
-    h3 {
-      color: white;
-      text-align: center;
-      width: 50%;
-      margin: 20px auto;
-    }
 
-        p {
-          color: white;
-          width: 50%;
-        }
-    button {
+h3 {
+  color: white;
+  text-align: center;
+  width: 50%;
+  margin: 20px auto;
+}
 
-      font-family: 'Fredoka One', cursive;
-        font-weight: bold;
-      padding: 8px 14px;
-      background: gold ;
-      border: 2px solid goldenrod;
-    }
+p {
+  color: white;
+  width: 50%;
+}
+
+button {
+
+  font-family: 'Fredoka One', cursive;
+  font-weight: bold;
+  padding: 8px 14px;
+  background: gold;
+  border: 2px solid goldenrod;
+}
+
 h4 {
   color: white;
-    width: 50%;
+  width: 50%;
 }
 
 
 
 
-    .rainbow-text {
-      font-weight: bold;
-      background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow 3s linear infinite;
-    }
+.rainbow-text {
+  font-weight: bold;
+  background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
 
-    @keyframes rainbow {
-      0% {
-        background-position: 0% 50%;
-      }
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
-      100% {
-        background-position: 100% 50%;
-      }
-    }
+  100% {
+    background-position: 100% 50%;
+  }
+}
 
 
 
-    .golden-text {
-      font-weight: bold;
-      background-color: Gold;
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-      .epic-text {
-      font-weight: bold;
-      background-color: rgb(149, 11, 234);
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.golden-text {
+  font-weight: bold;
+  background-color: Gold;
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .plain-text {
-      font-weight: bold;
-      background-color: blue;
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.epic-text {
+  font-weight: bold;
+  background-color: rgb(149, 11, 234);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plain-text {
+  font-weight: bold;
+  background-color: blue;
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
