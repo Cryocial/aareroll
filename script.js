@@ -103,30 +103,15 @@ function updateTable() {
     // Add image to the row
     const imageCell = document.createElement("td");
     const img = document.createElement("img");
-    img.src = item.image; // Set the image source to the item's image path
+    img.src = item.image;
     img.alt = item.name;
-    img.width = 50; // Adjust the width of the image as needed
-    img.height = 50; // Adjust the height of the image as needed
+    img.width = 50;
+    img.height = 50;
     imageCell.appendChild(img);
 
-    // Determine styling class
-    const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
-    const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
-    const isEpicItem = ["Superior III", "Nimble III", "Range III"].includes(item.name);
-    const isPlainItem = ["Everything Else"].includes(item.name);
-
-    let classNames = [];
-    if (isRainbowItem) classNames.push("rainbow-text");
-    if (isGoldenItem) classNames.push("golden-text");
-    if (isEpicItem) classNames.push("epic-text");
-    if (isPlainItem) classNames.push("plain-text");
-
-    // Create text cell with styling
     const textCell = document.createElement("td");
     textCell.textContent = item.name;
-    textCell.className = classNames.join(" ");
 
-    // Create count cell
     const countCell = document.createElement("td");
     countCell.textContent = item.count;
 
@@ -138,6 +123,31 @@ function updateTable() {
     tableBody.appendChild(row);
   });
 }
+
+// Declare tableBody before using it in the second loop
+const tableBody = document.getElementById("rollTable");
+
+pool.forEach(item => {
+  const row = document.createElement("tr");
+
+  const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
+  const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
+  const isEpicItem = ["Superior III", "Nimble III", "Range III"].includes(item.name);
+  const isPlainItem = ["Everything Else"].includes(item.name);
+
+  let classNames = [];
+  if (isRainbowItem) classNames.push("rainbow-text");
+  if (isGoldenItem) classNames.push("golden-text");
+  if (isEpicItem) classNames.push("epic-text");
+  if (isPlainItem) classNames.push("plain-text");
+
+  row.innerHTML = `
+      <td class="${classNames.join(' ')}">${item.name}</td>
+      <td>${item.count}</td>
+    `;
+  tableBody.appendChild(row);
+});
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
