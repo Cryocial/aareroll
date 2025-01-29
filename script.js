@@ -92,10 +92,6 @@ function rollItems(times) {
   // Update the table after all rolls
   updateTable();
 }
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
 // Function to update the table
 function updateTable() {
   const tableBody = document.getElementById("rollTable");
@@ -113,9 +109,24 @@ function updateTable() {
     img.height = 50; // Adjust the height of the image as needed
     imageCell.appendChild(img);
 
+    // Determine styling class
+    const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
+    const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
+    const isEpicItem = ["Superior III", "Nimble III", "Range III"].includes(item.name);
+    const isPlainItem = ["Everything Else"].includes(item.name);
+
+    let classNames = [];
+    if (isRainbowItem) classNames.push("rainbow-text");
+    if (isGoldenItem) classNames.push("golden-text");
+    if (isEpicItem) classNames.push("epic-text");
+    if (isPlainItem) classNames.push("plain-text");
+
+    // Create text cell with styling
     const textCell = document.createElement("td");
     textCell.textContent = item.name;
+    textCell.className = classNames.join(" ");
 
+    // Create count cell
     const countCell = document.createElement("td");
     countCell.textContent = item.count;
 
@@ -127,26 +138,6 @@ function updateTable() {
     tableBody.appendChild(row);
   });
 }
-
-pool.forEach(item => {
-  const row = document.createElement("tr");
-  const isRainbowItem = ["Unique", "Divine", "Golden", "Celestial", "Reaper"].includes(item.name);
-  const isGoldenItem = ["Godspeed", "Sniper", "Culling", "Adept"].includes(item.name);
-  const isEpicItem = ["Superior III", "Nimble III", "Range III"].includes(item.name);
-  const isPlainItem = ["Everything Else"].includes(item.name);
-
-  let classNames = [];
-  if (isRainbowItem) classNames.push("rainbow-text");
-  if (isGoldenItem) classNames.push("golden-text");
-  if (isEpicItem) classNames.push("epic-text");
-  if (isPlainItem) classNames.push("plain-text");
-
-  row.innerHTML = `
-      <td class="${classNames.join(' ')}">${item.name}</td>
-      <td>${item.count}</td>
-    `;
-  tableBody.appendChild(row);
-});
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
